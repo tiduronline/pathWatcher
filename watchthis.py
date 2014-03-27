@@ -9,12 +9,12 @@ http://tiduronline.com/
 '''
 
 
-from time import sleep
+from time import sleep,ctime
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from os import getcwd
 import smtplib
-from time import ctime
+
 
 
 EFrom   = 'source_email',
@@ -31,9 +31,9 @@ def sendMail(msg):
 
     message = "\r\n".join([
         "Subject: Symlink hilang bro",
-        "From: system@monitor",
-        "To: emaillu@taruhsini",
-        "",
+        "From: " + EFrom,
+        "To: " + EUser,
+        "", # space mail
         msg
     ])
 
